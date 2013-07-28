@@ -22,7 +22,7 @@ function LoginOrSignup(){
 
 	var logoimage = Ti.UI.createImageView({
   		image:'/image/logo.png',
-  		top: 6,
+  		top: 9,
   		width: 'auto'
 	});
 	
@@ -56,7 +56,7 @@ function LoginOrSignup(){
 	
 	var questionicon = Ti.UI.createImageView({
   		image:'/image/qustionicon.png',
-  		top: 0,
+  		top: 1,
   		width: 'auto'
 	});
 	
@@ -80,7 +80,7 @@ function LoginOrSignup(){
 	// Main Screen Login with Fackbook
 	
 	var FbLoginView = Ti.UI.createView({
-    	top:41,
+    	top:'9%',
 		left:0,
     	width:'100%',
     	height:'70%',
