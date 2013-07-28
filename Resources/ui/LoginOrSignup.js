@@ -66,7 +66,7 @@ function LoginOrSignup(){
 	
 	// Horizontal Divider
 	var HorizontalDivider1 = Ti.UI.createView({
-    	top:40,
+    	top:'10%',
 		left:0,
     	width:'100%',
     	height:'1px',
@@ -139,7 +139,7 @@ function LoginOrSignup(){
 	
 	
 	var EmailLoginView = Ti.UI.createView({
-    	top:'79%',
+    	top:'78%',
 		left:0,
     	width:'100%',
     	height:'22%',
@@ -179,13 +179,17 @@ function LoginOrSignup(){
 	
 	loginbtn.addEventListener('click', function(){
 		
-		var Login = require('ui/Login');
+		var Login = require('ui/Login');		
 		
-		
-		// This will only work on IPHONE NEEDED a MOBILE DEVISE TEST
-		new Login().open({
-			transition:Titanium.UI.iPhone.AnimationStyle.CURL_UP
-		});
+		if (Ti.Platform.name === 'iPhone OS'){
+			// This will only work on IPHONE NEEDED a MOBILE DEVISE TEST
+			new Login().open({
+				transition:Titanium.UI.iPhone.AnimationStyle.CURL_UP
+			});
+		}
+		else {
+  			new Login().open();
+		}
 		
 	});
 	
@@ -211,10 +215,17 @@ function LoginOrSignup(){
 		
 		var Signup = require('ui/Signup');
 		
-		// This will only work on IPHONE NEEDED a MOBILE DEVISE TEST
-		new Signup().open({
-			transition:Titanium.UI.iPhone.AnimationStyle.CURL_UP
-		});
+		
+		if (Ti.Platform.name === 'iPhone OS'){
+			// This will only work on IPHONE NEEDED a MOBILE DEVISE TEST
+			new Signup().open({
+				transition:Titanium.UI.iPhone.AnimationStyle.CURL_UP
+			});
+		}
+		else {
+  			new Login().open();
+		}
+		
 	});
 	
 	EmailLoginView.add(signupbtn);	
