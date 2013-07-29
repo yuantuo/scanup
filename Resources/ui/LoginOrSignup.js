@@ -223,7 +223,7 @@ function LoginOrSignup(){
 			});
 		}
 		else {
-  			new Login().open();
+  			new Signup().open();
 		}
 		
 	});

@@ -222,7 +222,11 @@ function Login(){
 	
 		if (username.value != '' && password.value != '')  
     	{  
-			alert('User logged in!')
+			//alert('User logged in!')
+			//API AUTH API NEEDED AT THIS STAGE!!! TOK
+			
+			var TabGroups = require('ui/TabGroup');
+			new TabGroups().open();
     	}  
     	else  
     	{  

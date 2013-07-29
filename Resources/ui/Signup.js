@@ -111,7 +111,7 @@ function Signup(){
 	
 	var username = Titanium.UI.createTextField({  
     	color:'#336699',  
-    	top:'10%',  
+    	top:'11%',  
     	left:'10%',
     	right: '10%',  
     	width:'80%',  
