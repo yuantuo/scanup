@@ -4,6 +4,20 @@ function Account(){
 		title: 'Account',
     	backgroundColor:'#fff'
 	});
+	
+	
+	logoutbtn = Ti.UI.createButton({
+		title: 'logout'
+	});
+	
+	
+	logoutbtn.addEventListener('click', function(){
+		Ti.App.fireEvent('app:closescanner');
+		var LoginOrSignup = require('ui/LoginOrSignup');
+		new LoginOrSignup().open();
+	});
+	
+	self.add(logoutbtn);
 
 	return self;
 	

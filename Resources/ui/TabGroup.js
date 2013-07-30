@@ -13,6 +13,10 @@ function TapGroups(){
 				window: scanner
 	});
 	
+	tab.addEventListener('focus', function(){
+		Ti.App.fireEvent('app:startscanner');	
+	});
+	
 	self.currentTab = tab;
 	
 	self.addTab(tab);
@@ -28,6 +32,10 @@ function TapGroups(){
 				window: offer
 	});
 	
+	tab.addEventListener('focus', function(){
+		Ti.App.fireEvent('app:stopscanner');
+	});
+	
 	self.addTab(tab);
 	
 
@@ -39,6 +47,10 @@ function TapGroups(){
 				icon: 'KS_nav_views.png',
 				title: 'Near by',
 				window: nearby
+	});
+	
+	tab.addEventListener('focus', function(){
+		Ti.App.fireEvent('app:stopscanner');
 	});
 	
 	self.addTab(tab);	
@@ -54,8 +66,12 @@ function TapGroups(){
 				window: account
 	});
 	
-	self.addTab(tab);	
 	
+	tab.addEventListener('focus', function(){
+		Ti.App.fireEvent('app:stopscanner');
+	});
+	
+	self.addTab(tab);	
 			
 	return self;
 }

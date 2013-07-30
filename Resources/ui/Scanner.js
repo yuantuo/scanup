@@ -111,7 +111,24 @@ function Scanner(){
         	// different than portrait.
     	}
 	});
+	
+	
+	Ti.App.addEventListener('app:stopscanner', function(){
+		if (picker != null) {
+        	picker.stopScanning();
+    	}
+	});
  
+ 	Ti.App.addEventListener('app:startscanner', function(){
+		picker.startScanning();
+	});
+	
+ 	Ti.App.addEventListener('app:closescanner', function(){
+		closeScanner();
+	});	
+	
+	
+	
 	openScanner();
 	
 	return self;
