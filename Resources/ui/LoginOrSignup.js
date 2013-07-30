@@ -104,6 +104,12 @@ function LoginOrSignup(){
   		width: 'auto'
 	});
 	
+	
+	FbLoginIcon.addEventListener('click', function(e){
+			fb.authorize();
+	});
+
+	
 	FbLoginView.add(FbLoginIcon);
 
 	var FbtextLabel = Ti.UI.createLabel({
@@ -184,10 +190,11 @@ function LoginOrSignup(){
 		
 		
 		if (Ti.Platform.name === 'iPhone OS'){
-			// This will only work on IPHONE NEEDED a MOBILE DEVISE TEST
-			new Login().open({
-				transition:Titanium.UI.iPhone.AnimationStyle.CURL_UP
-			});
+			new Login().open();
+			//animation is causing memory issues - No constraints available for view
+			//new Login().open({
+			//	transition:Titanium.UI.iPhone.AnimationStyle.CURL_UP
+			//});
 		}
 		else {
   			new Login().open();
@@ -220,13 +227,15 @@ function LoginOrSignup(){
 		var Signup = require('ui/Signup');
 		
 		if (Ti.Platform.name === 'iPhone OS'){
-			// This will only work on IPHONE NEEDED a MOBILE DEVISE TEST
-			
-			new Signup().open({
-				transition:Titanium.UI.iPhone.AnimationStyle.CURL_UP
-			});
+			self.remove();
+			new Signup().open();
+			//animation is causing memory issues - No constraints available for view
+			//new Signup().open({
+			//	transition:Titanium.UI.iPhone.AnimationStyle.CURL_UP
+			//});
 		}
 		else {
+			self.remove();
   			new Signup().open();
 		}
 		

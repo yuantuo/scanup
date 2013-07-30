@@ -10,9 +10,9 @@ function Account(){
 		title: 'logout'
 	});
 	
-	
 	logoutbtn.addEventListener('click', function(){
 		Ti.App.fireEvent('app:closescanner');
+		fb.logout();
 		var LoginOrSignup = require('ui/LoginOrSignup');
 		new LoginOrSignup().open();
 	});
@@ -21,7 +21,6 @@ function Account(){
 
 	return self;
 	
-
 }
 
 module.exports = Account;
