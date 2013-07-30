@@ -179,7 +179,9 @@ function LoginOrSignup(){
 	
 	loginbtn.addEventListener('click', function(){
 		
-		var Login = require('ui/Login');		
+		var Login = require('ui/Login');
+				
+		
 		
 		if (Ti.Platform.name === 'iPhone OS'){
 			// This will only work on IPHONE NEEDED a MOBILE DEVISE TEST
@@ -190,6 +192,8 @@ function LoginOrSignup(){
 		else {
   			new Login().open();
 		}
+		
+		self.close();
 		
 	});
 	
@@ -215,9 +219,9 @@ function LoginOrSignup(){
 		
 		var Signup = require('ui/Signup');
 		
-		
 		if (Ti.Platform.name === 'iPhone OS'){
 			// This will only work on IPHONE NEEDED a MOBILE DEVISE TEST
+			
 			new Signup().open({
 				transition:Titanium.UI.iPhone.AnimationStyle.CURL_UP
 			});
@@ -225,6 +229,8 @@ function LoginOrSignup(){
 		else {
   			new Signup().open();
 		}
+		
+		self.close();
 		
 	});
 	

@@ -224,7 +224,7 @@ function Login(){
     	{  
 			//alert('User logged in!')
 			//API AUTH API NEEDED AT THIS STAGE!!! TOK
-			
+			self.close();
 			var TabGroups = require('ui/TabGroup');
 			new TabGroups().open();
     	}  
